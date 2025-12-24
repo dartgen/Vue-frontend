@@ -39,7 +39,7 @@ const handleLogout = () => {
           >
             Login
           </RouterLink>
-          <h3>{{ userStore.currentUser.value }}</h3>
+          <h3>{{ userStore.currentUser }}</h3>
           <button @click="handleLogout">Logout</button>
         </nav>
       </div>

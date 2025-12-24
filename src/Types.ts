@@ -6,3 +6,9 @@ export interface LoginResponse {
     username: string
   }
 }
+
+export interface Task {
+  Id: number
+  Szoveg: string
+  Kesz: boolean
+}

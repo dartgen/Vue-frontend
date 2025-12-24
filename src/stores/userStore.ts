@@ -1,8 +1,10 @@
+import { defineStore } from 'pinia'
 import { ref, type Ref } from 'vue'
 
-const currentUser: Ref<string, string> = ref(localStorage.getItem('activeUser') || '')
+export const useUserStore = defineStore('user',() => {
 
-export function useUserStore() {
+  const currentUser: Ref<string> = ref(localStorage.getItem('activeUser') || '')
+
   function setUser(name: string, token: string) {
     currentUser.value = name
     localStorage.setItem('activeUser', name)
@@ -19,4 +21,4 @@ export function useUserStore() {
     logout,
     setUser,
   }
-}
+});
