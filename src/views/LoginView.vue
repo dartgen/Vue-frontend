@@ -25,7 +25,7 @@ const handleLogin = async () => {
   const data: LoginResponse = await response.json()
   console.log(data)
   if (response.ok) {
-    userStore.setUser(data.user.username)
+    userStore.setUser(data.user.username, data.token)
     router.push('/')
   } else {
     alert('Login Failed!')
